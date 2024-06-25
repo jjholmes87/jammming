@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+Jammming
+
+This is a Codecademy project.
+
+It has a bug where you have to search twice for your first search term.
+
+Saving a playlist should trigger an alert box with the playlist info but it doesn't.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
