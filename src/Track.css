@@ -1,0 +1,14 @@
+.Track {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .Track-information {
+    text-align: left;
+  }
+  
+  .Track-action {
+    padding: 10px;
+  }
+  
