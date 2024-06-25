@@ -1,4 +1,45 @@
 .SearchResults {
-    width: 45%;
-  }
-  
+  margin-bottom: 20px;
+}
+
+.SearchResults h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Example styling for track list (TrackList component) */
+.TrackList {
+  list-style: none;
+  padding: 0;
+}
+
+.TrackList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.TrackList li:last-child {
+  border-bottom: none;
+}
+
+.TrackList .Track-action {
+  width: 60px; /* Adjust as needed */
+}
+
+.TrackList .Track-action button {
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: #1db954;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.TrackList .Track-action button:hover {
+  background-color: #1ed760;
+}

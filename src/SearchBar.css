@@ -1,14 +1,20 @@
+/* Example adjustments for SearchBar */
 .SearchBar {
-    margin: 20px 0;
-  }
-  
-  .SearchBar input {
-    width: 60%;
-    padding: 10px;
-  }
-  
-  .SearchButton {
-    padding: 10px;
-    margin-left: 10px;
-  }
-  
+  margin-bottom: 20px;
+}
+
+.SearchButton {
+  background-color: #1db954;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.SearchButton:hover {
+  background-color: #1ed760;
+}
+
+/* Adjust styles for SearchResults and Playlist as needed */

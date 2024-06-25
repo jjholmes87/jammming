@@ -2,7 +2,7 @@ import React from 'react';
 import Track from './Track.js';
 import './TrackList.css';
 
-function TrackList({ tracks, onAdd, onRemove, isRemoval }) {
+function TrackList({ tracks, onAdd, isRemoval, onRemove }) {
   return (
     <div className="TrackList">
       {tracks.map(track => (

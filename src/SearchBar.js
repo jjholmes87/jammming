@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './SearchBar.css';
 import Spotify from './Spotify.js';
 
+const spotifyApiUrl = 'https://api.spotify.com/v1';
+
 const SearchBar = ({ setSearchResults }) => {
   const [term, setTerm] = useState('');
 
@@ -10,9 +12,32 @@ const SearchBar = ({ setSearchResults }) => {
   };
 
   const search = () => {
-    Spotify.search(term)
-      .then(results => {
-        setSearchResults(results);
+    const accessToken = Spotify.getAccessToken();
+    if (!accessToken) {
+      console.error('Access token not available');
+      return;
+    }
+
+    fetch(`${spotifyApiUrl}/search?type=track&q=${term}`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Request failed!');
+      })
+      .then(data => {
+        console.log('Search results:', data); // For debugging - you can remove this line
+        setSearchResults(data.tracks.items.map(track => ({
+          id: track.id,
+          name: track.name,
+          artist: track.artists[0].name,
+          album: track.album.name,
+          uri: track.uri
+        })));
       })
       .catch(error => {
         console.error('Error fetching data:', error);
@@ -24,7 +49,6 @@ const SearchBar = ({ setSearchResults }) => {
     <div className="SearchBar">
       <input
         placeholder="Enter A Song, Album, or Artist"
-        value={term}
         onChange={handleTermChange}
       />
       <button className="SearchButton" onClick={search}>
@@ -32,6 +56,6 @@ const SearchBar = ({ setSearchResults }) => {
       </button>
     </div>
   );
-};
+}
 
 export default SearchBar;

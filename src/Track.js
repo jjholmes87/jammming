@@ -1,7 +1,7 @@
 import React from 'react';
 import './Track.css';
 
-function Track({ track, onAdd, onRemove, isRemoval }) {
+function Track({ track, onAdd, isRemoval, onRemove }) {
   const renderAction = () => {
     if (isRemoval) {
       return <button className="Track-action" onClick={() => onRemove(track)}>-</button>;
