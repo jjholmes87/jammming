@@ -1,5 +1,5 @@
 const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
-const redirectUri = 'http://localhost:3000/';
+const redirectUri = 'https://jammming-jjholmes87.netlify.app/';
 const spotifyAuthorizeUrl = 'https://accounts.spotify.com/authorize';
 const spotifyApiUrl = 'https://api.spotify.com/v1';
 
